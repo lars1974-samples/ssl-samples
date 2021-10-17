@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: 0way
+---
+dependencies:
+  keystore: 0way.p12
+  service1way: https://localhost:9001/hello
+  service2way: https://localhost:9002/hello
+---
+server:
+  port: 9000

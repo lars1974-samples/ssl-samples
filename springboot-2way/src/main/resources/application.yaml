@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: 2way
+---
+dependencies:
+  service0way: http://localhost:9000/hello
+  service1way: https://localhost:9001/hello
+---
+server:
+  port: 9002
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:2way.p12
+    key-store-password: password
+    key-alias: 2way
+    key-store-type: PKCS12
+    key-store-provider: SUN
+    trust-store: classpath:2way-trust.p12
+    trust-store-password: password
+    trust-store-type: PKCS12
+
+

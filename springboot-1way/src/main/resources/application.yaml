@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: 1way
+---
+dependencies:
+  keystore: 1way.p12
+  service0way: http://localhost:9000/hello
+  service2way: https://localhost:9002/hello
+---
+server:
+  port: 9001
+  ssl:
+    enabled: true
+    key-store: classpath:1way.p12
+    key-store-password: password
+    key-alias: 1way
+    key-store-type: PKCS12
+    key-store-provider: SUN
